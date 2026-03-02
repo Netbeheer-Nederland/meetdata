@@ -142,3 +142,8 @@ applicable. A xref:schema:class/ReadingType.adoc[`ReadingType`]
 defines attributes for the ``IntervalReading``s. Each `IntervalReading` can be
 provided a xref:schema:class/ReadingQuality.adoc[`ReadingQuality`],
 defining data quality for the `IntervalReading`.
+
+== Additional schemas
+
+* xref:schema:attachment$schemas/json_schema/dp_meetdata.json_schema.json[JSON schema]
+* xref:schema:attachment$examples/dp_meetdata.example.json[Example instance data]
