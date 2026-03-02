@@ -1,8 +1,8 @@
-identifier: 'test_data_dp_meetdata'
+identifier: 'test_dp_meetdata_aggregation'
 contact_point: 'ritger.teunissen@alliander.com'
-title: 'Example instance data'
-release_date: '2025-01-08'
-version: '1.0'
+title: 'SBI-code gebiedsprofiel example instance data'
+release_date: '2025-02-17'
+version: '1.1'
 market_evaluation_points:
   - meter_readings:
       - values_interval:
@@ -36,20 +36,11 @@ market_evaluation_points:
               - value: 82.3364836277116
                 time_stamp: '2024-11-22T13:45:00Z'
             reading_type:
+              aggregate: average
               flow_direction: reverse
               multiplier: k
               unit: W
-    european_article_number_ean: '123456789101112131'
-  - meter_readings:
-      - values_interval:
-          start: '2023-10-17'
-          end: '2999-12-31'
-        interval_blocks:
-          - interval_readings:
-              - value: 54.6734982
-                time_stamp: '2024-12-05T17:45:00Z'
-            reading_type:
-              flow_direction: forward
-              multiplier: k
-              unit: W
-    european_article_number_ean: '131211101987654321'
+    is_virtual: true
+    sbi_codes:
+      - '1234'
+      - '4321'

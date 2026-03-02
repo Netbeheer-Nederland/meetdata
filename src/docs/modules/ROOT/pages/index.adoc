@@ -142,3 +142,12 @@ applicable. A xref:schema:class/ReadingType.adoc[`ReadingType`]
 defines attributes for the ``IntervalReading``s. Each `IntervalReading` can be
 provided a xref:schema:class/ReadingQuality.adoc[`ReadingQuality`],
 defining data quality for the `IntervalReading`.
+
+== Use cases
+
+This information model supports two separate use cases for providing meter
+readings:
+
+* enumeration of ``MeterReading``s for one or more ``MarketEvaluationPoint``s;
+* aggregation of ``MarketEvaluationPoint``s, where the ``MeterReading``s
+  describe an aggregated energy profile.
