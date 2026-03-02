@@ -10,7 +10,7 @@ Member States.
 [d2,svg,theme=4]
 ----
 grid-rows: 5
-grid-columns: 4
+grid-columns: 3
 
 horizontal-gap: 160
 vertical-gap: 80
@@ -21,30 +21,26 @@ vars: {
   }
 }
 
-MeterReadingDataSet.class: dataset
 MarketEvaluationPoint.class: market
 MeterReading.class: enterprise
 DateTimeInterval.class: enterprise
 
-1.class: empty
 EnergyConsumer.class: grid
 IntervalBlock.class: enterprise
 ReadingType.class: enterprise
 
-2.class: empty
 Location.class: enterprise
 IntervalReading.class: enterprise
 ReadingQuality.class: enterprise
 
-MeterReadingDataSet -> MarketEvaluationPoint: ""
-MarketEvaluationPoint -> MeterReading: "meter_readings"
-MeterReading -> DateTimeInterval: "values_interval"
-MeterReading -> IntervalBlock: "interval_blocks"
-IntervalBlock -> IntervalReading: "interval_readings"
-IntervalReading -> ReadingQuality: "reading_qualities"
-IntervalBlock -> ReadingType: "reading_type"
-MarketEvaluationPoint -> EnergyConsumer: "equipments"
-EnergyConsumer -> Location: "location"
+MeterReading -> DateTimeInterval
+MeterReading -> MarketEvaluationPoint
+IntervalBlock -> MeterReading
+IntervalBlock -> ReadingType
+IntervalReading -> IntervalBlock
+EnergyConsumer -> MarketEvaluationPoint
+EnergyConsumer -> Location
+ReadingQuality -> IntervalReading
 
 legend: "" {
   style: {
@@ -126,13 +122,6 @@ classes: {
   }
 }
 ----
-
-The data is intended to be represented as a hierarchy with a
-xref:schema:class/MeterReadingDataSet.adoc[`MeterReadingDataSet`] at
-its root, followed by
-xref:schema:class/MarketEvaluationPoint.adoc[`MarketEvaluationPoint`]s
-nested inside the `MeterReadingDataSet`. Each `MarketEvaluationPoint` has one
-or more xref:schema:class/MeterReading.adoc[`MeterReading`]s.
 
 A `MeterReading` has one or more
 xref:schema:class/IntervalBlock.adoc[`IntervalBlock`]s, which
