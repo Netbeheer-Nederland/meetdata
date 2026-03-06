@@ -1,0 +1,123 @@
+'@context':
+  linkml: https://w3id.org/linkml/
+  cbs: https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/
+  cim: https://cim.ucaiug.io/ns#
+  eu: https://cim.ucaiug.io/ns/eu#
+  nbnl: https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/
+  nl: https://cim.ucaiug.io/ns/nl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  github: https://github.com/
+  vocab: http://modellen.netbeheernederland.nl/meetdata/
+  dcterms: http://purl.org/dc/terms/
+'@id': urn:uuid:503aa5d2-3972-4b5a-9654-8bc19fdfe8a5
+'dcterms:title': Meetdata G_Gemeente example
+'dcterms:issued':
+  '@value': 2026-02-14T12:34:567Z
+  '@type': xsd:date
+'dcterms:publisher':
+  '@id': urn:uuid:d01e81d1-bf0b-4053-b134-62fe484f1adf
+  'dcterms:title': 'EDSN'
+'dcterms:references':
+  - '@id': urn:uuid:5bdf9a6d-ef38-4c4d-a6ee-42a9accdec64
+'@graph':
+  - '@id': urn:uuid:ecdd2ef0-2842-447d-bc4c-4b089e916369
+    '@type': cim:MarketEvaluationPoint
+    nl:MarketEvaluationPoint.SBICodes: ''
+    cim:UsagePoint.isVirtual: true
+    cim:IdentifiedObject.description: ''
+    cim:IdentifiedObject.mRID: ecdd2ef0-2842-447d-bc4c-4b089e916369
+    nl:IdentifiedObject.europeanArticleNumberEAN: ''
+    cim:IdentifiedObject.name: ''
+  - '@id': urn:uuid:a68c1b45-ee68-4e4f-ba6b-abae4e11f001
+    '@type': cim:MeterReading
+    cim:MeterReading.valuesInterval:
+      '@id': urn:uuid:896723cc-7581-4c71-9f2d-114fe1618ba3
+    cim:MeterReading.UsagePoint:
+      '@id': urn:uuid:ecdd2ef0-2842-447d-bc4c-4b089e916369
+    cim:IdentifiedObject.description: ''
+    cim:IdentifiedObject.mRID: a68c1b45-ee68-4e4f-ba6b-abae4e11f001
+    nl:IdentifiedObject.europeanArticleNumberEAN: ''
+    cim:IdentifiedObject.name: ''
+  - '@id': urn:uuid:896723cc-7581-4c71-9f2d-114fe1618ba3
+    '@type': cim:DateTimeInterval
+    cim:DateTimeInterval.end:
+      '@value': '2026-02-23'
+      '@type': xsd:date
+    cim:DateTimeInterval.start:
+      '@value': '2026-02-23'
+      '@type': xsd:date
+  - '@id': urn:uuid:a735d49a-fed0-4477-848f-53a43ddde6d6
+    '@type': cim:IntervalBlock
+    cim:IntervalBlock.MeterReading:
+      '@id': urn:uuid:a68c1b45-ee68-4e4f-ba6b-abae4e11f001
+    cim:IntervalBlock.ReadingType:
+      '@id': urn:uuid:08e7a9e9-8acf-4a38-9f9f-05d7dfec5ec7
+  - '@id': urn:uuid:947fab63-87dc-4f51-8eca-123ad8fb043e
+    '@type': cim:IntervalReading
+    cim:IntervalReading.IntervalBlocks:
+      - '@id': urn:uuid:a735d49a-fed0-4477-848f-53a43ddde6d6
+    cim:BaseReading.value: ''
+    cim:MeasurementValue.timeStamp:
+      '@value': '2026-02-23'
+      '@type': xsd:date
+    cim:IdentifiedObject.description: ''
+    cim:IdentifiedObject.mRID: 947fab63-87dc-4f51-8eca-123ad8fb043e
+    nl:IdentifiedObject.europeanArticleNumberEAN: ''
+    cim:IdentifiedObject.name: ''
+  - '@id': urn:uuid:08e7a9e9-8acf-4a38-9f9f-05d7dfec5ec7
+    '@type': cim:ReadingType
+    cim:ReadingType.aggregate:
+      '@id': cim:AggregateKind.sum
+    cim:ReadingType.flowDirection:
+      '@id': cim:FlowDirectionKind.forward
+    cim:ReadingType.multiplier:
+      '@id': cim:UnitMultiplier.G
+    cim:ReadingType.unit:
+      '@id': cim:UnitSymbol.J
+    cim:IdentifiedObject.description: ''
+    cim:IdentifiedObject.mRID: 08e7a9e9-8acf-4a38-9f9f-05d7dfec5ec7
+    nl:IdentifiedObject.europeanArticleNumberEAN: ''
+    cim:IdentifiedObject.name: ''
+  - '@id': urn:uuid:edc83dbf-280d-43f6-8704-2b92124dcfba
+    '@type': cim:EnergyConsumer
+    cim:Equipment.UsagePoints:
+      - '@id': urn:uuid:ecdd2ef0-2842-447d-bc4c-4b089e916369
+    cim:Equipment.aggregate: true
+    cim:PowerSystemResource.Location:
+      '@id': urn:uuid:8c1196c7-4597-47ad-9b7e-c10b35f6663f
+    cim:IdentifiedObject.description: ''
+    cim:IdentifiedObject.mRID: edc83dbf-280d-43f6-8704-2b92124dcfba
+    nl:IdentifiedObject.europeanArticleNumberEAN: ''
+    cim:IdentifiedObject.name: ''
+  - '@id': urn:uuid:8c1196c7-4597-47ad-9b7e-c10b35f6663f
+    '@type': cim:Location
+    cim:Location.mainAddress:
+      '@id': urn:uuid:7090d042-3dc6-42f3-bf68-9fe345b5d97b
+    cim:IdentifiedObject.description: ''
+    cim:IdentifiedObject.mRID: 8c1196c7-4597-47ad-9b7e-c10b35f6663f
+    nl:IdentifiedObject.europeanArticleNumberEAN: ''
+    cim:IdentifiedObject.name: ''
+  - '@id': urn:uuid:7090d042-3dc6-42f3-bf68-9fe345b5d97b
+    '@type': cim:StreetAddress
+    cim:StreetAddress.postalCode: ''
+    cim:StreetAddress.streetDetail:
+      '@id': urn:uuid:a217c3e6-1905-4e44-a5d3-f6e4917ab88a
+    cim:StreetAddress.townDetail:
+      '@id': urn:uuid:5118ee77-36b4-4615-bbb5-aad7014df3b2
+  - '@id': urn:uuid:a217c3e6-1905-4e44-a5d3-f6e4917ab88a
+    '@type': cim:StreetDetail
+    cim:StreetDetail.code: ''
+    cim:StreetDetail.number: ''
+  - '@id': urn:uuid:5118ee77-36b4-4615-bbb5-aad7014df3b2
+    '@type': cim:TownDetail
+    cim:TownDetail.name: 'DeGasGemeente'
+    vocab:TownDetail.neighbourhood: ''
+    cim:TownDetail.section: ''
+    cim:TownDetail.stateOrProvince: ''
+  - '@id': urn:uuid:df14380b-c974-4c06-a8bb-7f62abc7973f
+    '@type': cim:ReadingQuality
+    cim:ReadingQuality.comment: ''
+    cim:ReadingQuality.Reading:
+      '@id': urn:uuid:947fab63-87dc-4f51-8eca-123ad8fb043e
+
